@@ -1,3 +1,7 @@
+<p align="left">
+  <img src="./logo.png" alt="Connect B-DM Logo" width="110">
+</p>
+
 # Connect B-DM
 
 Connect B-DM is an accessibility-focused communication platform built to help bridge communication gaps between people who use sign language, text, and speech.
