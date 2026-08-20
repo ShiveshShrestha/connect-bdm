@@ -1,0 +1,194 @@
+/* ================= NAVBAR VARIABLES ================= */
+:root {
+    --primary: #111827;
+    --primary-accent: #2563eb;
+    --text-dark: #111827;
+    --text-light: #6b7280;
+    --white: #ffffff;
+
+    --navbar-height: 80px;
+    --radius: 12px;
+
+    --shadow-sm: 0 2px 8px rgba(0,0,0,0.05);
+    --shadow-md: 0 8px 25px rgba(0,0,0,0.10);
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  font-size: 50px; /* adjust as needed */
+  font-weight: 600;
+}
+
+.logo img {
+  width: 45px;   /* adjust size */
+  height: 45px;
+  margin-right: 8px; /* space between logo and text */
+}
+
+/* ================= NAVBAR ================= */
+
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: var(--navbar-height);
+    padding: 0 8%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    background: var(--white);
+    box-shadow: var(--shadow-sm);
+    z-index: 1000;
+}
+
+/* ================= LOGO ================= */
+
+.logo {
+    font-size: 24px;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    color: var(--primary);
+}
+
+.logo span {
+    color: var(--primary-accent);
+}
+
+/* ================= NAV ICONS ================= */
+
+.nav-icons {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+
+    display: flex;
+    align-items: center;
+    gap: 30px;
+  
+    list-style: none;
+}
+
+/* ================= ICON LINK ================= */
+
+.nav-icons .na {
+    width: 50px;
+    height: 50px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 26px;
+    text-decoration: none;
+    color: var(--text-dark);
+
+    border-radius: 50px;
+
+    background: rgba(255,255,255,0.7);
+    backdrop-filter: blur(8px);
+
+    transition: all 0.3s ease;
+}
+
+/* ================= NORMAL HOVER ================= */
+
+.nav-icons .na:hover {
+    background: var(--primary-accent);
+    color: var(--white);
+
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-md);
+}
+
+/* ================= VIDEO ICON (NOT LOGGED IN) ================= */
+
+/* normal state = same as other icons */
+body[data-loggedin="false"] #videoIcon {
+    color: var(--text-dark);
+}
+
+/* hover state when NOT logged in */
+body[data-loggedin="false"] #videoIcon:hover {
+    background: #696969; /* gray */
+    color: #ffffff;
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-md);
+}
+/* ================= LOGIN DROPDOWN ================= */
+
+.login-dropdown {
+    position: relative;
+}
+
+/* Dropdown panel */
+
+.dropdown-content {
+    display: none;
+
+    position: absolute;
+    right: 0;
+    top: 60px;
+
+    background: var(--white);
+    min-width: 300px;
+
+    padding: 15px;
+    border-radius: var(--radius);
+
+    box-shadow: var(--shadow-md);
+    z-index: 1000;
+}
+
+/* Show dropdown */
+
+.dropdown-content.show {
+    display: block;
+}
+
+/* ================= USER MENU ================= */
+
+#userMenu {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* Username */
+
+#userMenu .username {
+    font-size: 22px;
+    font-weight: bold;
+    color: var(--text-dark);
+    white-space: nowrap;
+}
+
+/* ================= LOGOUT BUTTON ================= */
+
+#userMenu .logout-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 44px;
+    height: 44px;
+
+    border-radius: 50%;
+    background: rgba(255,255,255,0.7);
+    backdrop-filter: blur(8px);
+
+    transition: all 0.3s ease;
+    color: var(--text-dark);
+}
+
+/* Logout hover */
+
+#userMenu .logout-btn:hover {
+    background: #dc2626;
+    color: #ffffff;
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <!-- Child templates can replace the page title through the title block below. -->
+    <title>{% block title %}Connect B-DM{% endblock %}</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/navbar.css') }}">
+
+    {% block styles %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/LandingPage.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/image_popup.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/contact_box.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/login_box.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/register_box.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/video_popup.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/sign_voice_popup.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/interpret_popup.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/voice_popup.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/admin_users.css') }}">
+    {% endblock %}
+</head>
+<body data-loggedin="{{ 'true' if session.get('username') else 'false' }}">
+
+    <!-- **************************NAVBAR KO ICON DEFINITION******************************** -->
+    <header>
+        <nav class="navbar" role="navigation" aria-label="Main navigation">
+            <div class="logo">
+                <img src="{{ url_for('static', filename='Logo/logo1.png') }}" alt="Connect B-DM logo">
+                Connect B-DM
+            </div>
+            <ul class="nav-icons">
+                <li>
+                    <a class="na" href="{{ url_for('home') }}" aria-label="Go to the home page">
+                        <i class="fas fa-home" aria-hidden="true"></i>
+                    </a>
+                </li>
+
+                <li>
+                    <a class="na" id="videoIcon" href="javascript:void(0)" role="button" aria-label="Open communication tools">
+                        <i class="fas fa-video" aria-hidden="true"></i>
+                    </a>
+                </li>
+
+                <li>
+                    <a class="na" href="javascript:void(0)" role="button" aria-label="Open project contact details">
+                        <i class="fas fa-comments" aria-hidden="true"></i>
+                    </a>
+                </li>
+
+                <li>
+                    <a class="na" id="imageTrigger" href="javascript:void(0)" role="button" aria-label="Open the sample image viewer">
+                        <i class="fa-solid fa-image" style="font-size:28px; opacity:0.95;" aria-hidden="true"></i>
+                    </a>
+                </li>
+
+                <!-- For dynamic profile of the user -->
+                {% if session.get('role') == 'admin' %}
+                <li>
+                    <a class="na" href="javascript:void(0)" id="adminMode" aria-label="Manage registered users">
+                        <i class="fas fa-users" aria-hidden="true"></i>
+                    </a>
+                </li>
+                {% endif %}
+
+                <li id="userMenu">
+                    {% if session.get('username') %}
+                        <!-- Logged in: power-off icon -->
+                        <a class="na logout-btn" href="{{ url_for('logout') }}" role="button" aria-label="Log out">
+                            <i class="fas fa-power-off" aria-hidden="true"></i>
+                        </a>
+                        <!-- Username outside link -->
+                        <span class="username" aria-label="Logged-in user">Namaste, {{ session['username'] }}</span>
+                    {% else %}
+                        <!-- Logged out: user icon triggers login -->
+                        <a class="na" href="#" id="loginTrigger" role="button" aria-label="Open the login window">
+                            <i class="fas fa-user" aria-hidden="true"></i>
+                        </a>
+                    {% endif %}
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- **************************Include extra files here******************************** -->
+    {% include "contact_box.html" %}
+
+    <!--******************************Page content override********************************* -->
+    <main>
+        {% block content %}{% endblock %}
+        {% include "login_box.html" %}
+        {% include "register_box.html" %}
+        {% include "video_popup.html" %}
+        {% include "sign_voice_popup.html" %}
+        {% include "interpret_popup.html" %}
+        {% include "voice_popup.html" %}
+        {% include "image_popup.html" %}
+        {% include "admin_users.html" %}
+    </main>
+
+    <!--******************************JS Files********************************* -->
+    {% block scripts %}
+    <script src="{{ url_for('static', filename='js/popup_manager.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/contact_box.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/image_popup.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/login_box.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/register_box.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/video_popup.js') }}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"></script>
+    <script src="{{ url_for('static', filename='js/admin_users.js') }}"></script>
+    <!-- MediaPipe Hands -->
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/hands/hands.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.js"></script>
+    <script src="{{ url_for('static', filename='js/sign_voice_popup.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/interpret_popup.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/voice_popup.js') }}"></script>
+    {% endblock %}
+
+</body>
+</html>

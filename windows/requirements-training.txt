@@ -1,0 +1,11 @@
+# Packages used to train and evaluate the saved models with Python 3.10.
+# We hab to keep this in a separate training environment because TensorFlow 2.10.1
+# requires an older protobuf version than the desktop MediaPipe setup.
+numpy==1.23.5
+protobuf==3.19.6
+scikit-learn==1.3.2
+matplotlib==3.7.5
+tqdm==4.66.1
+tensorflow==2.10.1
+keras==2.10.0
+h5py==3.7.0

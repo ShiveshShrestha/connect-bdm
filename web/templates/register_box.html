@@ -1,0 +1,41 @@
+<div id="registerBox" class="register-box popup-window" role="dialog" aria-modal="true" aria-labelledby="registerBoxHeader">
+
+    <!-- Header -->
+    <div class="register-header" id="registerBoxHeader">
+        <span>Create a Connect B-DM Account</span>
+        <button id="closeRegister" class="close-btn" type="button" aria-label="Close the registration window">&times;</button>
+    </div>
+
+    <!-- Content -->
+    <div class="register-content">
+
+        <form id="register-form">
+
+            <!-- Full Name -->
+            <div class="input-group" role="group">
+                <i class="fas fa-user" aria-hidden="true"></i>
+                <input type="text" name="name" placeholder="Name" required autocomplete="username" aria-label="Name">
+            </div>
+
+            <!-- Password -->
+            <div class="input-group password-group" role="group">
+                <i class="fas fa-lock" aria-hidden="true"></i>
+                <input type="password" name="password" id="passwordFieldRegister" placeholder="Password" required autocomplete="new-password" aria-label="Password">
+                <i class="fas fa-eye toggle-password" id="rtogglePassword" tabindex="0" aria-label="Show or hide password" role="button"></i>
+            </div>
+
+            <!-- Confirm Password -->
+            <div class="input-group password-group" role="group">
+                <i class="fas fa-lock" aria-hidden="true"></i>
+                <input type="password" name="confirm_password" id="confirmPasswordField" placeholder="Confirm password" required autocomplete="new-password" aria-label="Confirm password">
+                <i class="fas fa-eye toggle-password" id="toggleConfirmPassword" tabindex="0" aria-label="Show or hide confirmation password" role="button"></i>
+            </div>
+
+            <input type="submit" value="Create Account" class="register-btn" aria-label="Create account">
+
+            <!-- Message span -->
+            <span id="registerMessage" style="display:block; margin-top:10px;" aria-live="assertive" aria-label="Registration message" role="status"></span>
+        </form>
+
+    </div>
+</div>

@@ -1,0 +1,21 @@
+<div id="signVoicePopup" class="popup-window" role="dialog" aria-modal="true" aria-labelledby="signVoiceHeader">
+
+    <!-- Header -->
+    <div class="sign-voice-header" id="signVoiceHeader" role="banner" aria-label="Sign recognition header">
+        <span>Sign to Text and Voice</span>
+        <button id="closeSignVoice" class="close-btn" type="button" aria-label="Close sign recognition">&times;</button>
+    </div>
+
+    <!-- Content -->
+    <div class="sign-voice-content" role="region" aria-label="Sign recognition area">
+
+        <video id="signVideo" autoplay muted playsinline aria-label="Live camera view for hand-sign recognition"></video>
+
+        <textarea id="predText" aria-label="Recognized sign text" placeholder="Press Enter to accept the letter shown over the camera. You can also type here."></textarea>
+
+        <span id="signVoiceError" role="alert" aria-live="assertive"></span>
+        <span id="signVoiceStatus" role="status" aria-live="polite"></span>
+
+    </div>
+
+</div>

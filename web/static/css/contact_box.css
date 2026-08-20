@@ -1,0 +1,105 @@
+.contact-box {
+    position: fixed;
+    top: 120px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 440px; /* slightly wider for better layout */
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 12px 40px rgba(0,0,0,0.25);
+    display: none;
+    z-index: 1;
+    font-family: 'Poppins', sans-serif;
+    animation: fadeIn 0.25s ease;
+    font-size: 16px; /* base text bigger */
+    color: #333; /* professional dark gray */
+}
+
+/* Header */
+
+.contact-header {
+    background: linear-gradient(135deg,#0078d7,#0053a6);
+    color: white;
+    padding: 16px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: move;
+    border-radius: 12px 12px 0 0;
+    font-weight: 700; /* bolder for header */
+ 
+}
+
+.close-btn {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+/* Content */
+
+.contact-content {
+    padding: 24px; /* more breathing room */
+}
+
+/* Profile */
+
+.owner-profile {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.owner-avatar {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+}
+
+.owner-role {
+    font-size: 14px;
+    color: #555;
+    font-weight: 500;
+}
+
+/* Contact Info */
+
+.contact-info {
+    margin-top: 14px;
+}
+
+.info-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: 12px 0;
+    font-size: 15px;
+}
+
+.info-item i {
+    color: #0078d7;
+    width: 22px;
+}
+
+/* Divider */
+
+hr {
+    margin: 18px 0;
+    border: none;
+    border-top: 1px solid #eee;
+}
+
+/* Fade In Animation */
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translate(-50%, -12px);
+    }
+    to {
+        opacity: 1;
+        transform: translate(-50%, 0);
+    }
+}

@@ -1,0 +1,43 @@
+# Python cache files
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Python environments
+.venv/
+venv/
+env/
+ENV/
+conda-env/
+
+# Development tools
+.vscode/
+.idea/
+.pytest_cache/
+.mypy_cache/
+
+# Build files
+build/
+dist/
+*.egg-info/
+
+# Temporary runtime audio and signals
+.runtime/
+
+# Generated user messages
+BlindMan/Inbox/*
+DeafMuteMan/Inbox/*
+
+# Empty folders are kept here
+!BlindMan/Inbox/.gitkeep
+!DeafMuteMan/Inbox/.gitkeep
+
+# Temporary files
+*.tmp
+*.temp
+*.log
+
+# Windows system files
+Thumbs.db
+desktop.ini
+

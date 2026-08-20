@@ -1,0 +1,116 @@
+/* ================= VOICE POPUP ================= */
+.voice-popup {
+    position: fixed;          /* allows dragging */
+    top: 140px;                  /* fixed vertical start */
+    left: 600px;                  /* fixed horizontal start */
+    width: 480px;
+    max-width: 95%;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 12px 35px rgba(0,0,0,0.25);
+    display: none;
+    z-index: 1;
+    font-family: 'Poppins', sans-serif;
+    animation: fadeInVoice 0.25s ease;
+}
+
+/* ================= HEADER ================= */
+.voice-header {
+    background: linear-gradient(135deg,#3fa9f5,#0078d7);
+    color: white;
+    padding: 14px 18px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 10px 10px 0 0;
+    font-weight: 600;
+    cursor: move;              /* show draggable cursor */
+}
+
+/* ================= CLOSE BUTTON ================= */
+#closeVoicePopup {
+    background: none;
+    border: none;
+    font-size: 22px;
+    cursor: pointer;
+    color: white;
+}
+
+#closeVoicePopup:hover {
+    opacity: 0.8;
+}
+
+/* ================= BODY ================= */
+.voice-body {
+    padding: 20px;
+}
+
+/* ================= BUTTON CONTROLS ================= */
+.voice-controls {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.voice-controls button {
+    padding: 7px 14px;
+    border: none;
+    border-radius: 6px;
+    background: linear-gradient(135deg,#3fa9f5,#0078d7);
+    color: white;
+    cursor: pointer;
+    font-size: 13px;
+}
+
+.voice-controls button:hover {
+    opacity: 0.9;
+}
+
+/* ================= STATUS ================= */
+#voiceStatus {
+    background: #fafafa;
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
+    padding: 10px;
+    margin-bottom: 15px;
+    font-size: 14px;
+}
+
+/* ================= RESULT BOX ================= */
+#voiceResult {
+    min-height: 70px;
+    background: #fafafa;
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
+    padding: 12px;
+    margin-bottom: 15px;
+    font-size: 16px;
+    line-height: 1.4;
+}
+
+/* ================= SAVE BUTTON ================= */
+#saveVoiceBtn {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 6px;
+    background: linear-gradient(135deg,#3fa9f5,#0078d7);
+    color: white;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+#saveVoiceBtn:hover {
+    opacity: 0.9;
+}
+
+/* ================= ANIMATION ================= */
+@keyframes fadeInVoice {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);   /* only vertical movement */
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

@@ -1,0 +1,12 @@
+<div id="imagePopup" class="image-popup popup-window" role="dialog" aria-modal="true" aria-labelledby="imagePopupHeader">
+
+    <div id="imagePopupHeader" class="popup-header">
+        <span>Reference Image</span>
+        <button id="closeImagePopup" class="close-btn" type="button" aria-label="Close the image viewer">&times;</button>
+    </div>
+
+    <div class="popup-content">
+        <img src="{{ url_for('static', filename='sample.png') }}" id="popupImage" alt="Project reference image">
+    </div>
+
+</div>

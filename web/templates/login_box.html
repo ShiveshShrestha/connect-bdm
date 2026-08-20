@@ -1,0 +1,46 @@
+<div id="loginBox" class="login-box popup-window" role="dialog" aria-modal="true" aria-labelledby="loginBoxHeader">
+
+    <div class="login-header" id="loginBoxHeader">
+        <span>Log in to Connect B-DM</span>
+        <button id="closeLogin" class="close-btn" type="button" aria-label="Close the login window">&times;</button>
+    </div>
+
+    <div class="login-content">
+
+        <form id="login-form">
+
+            <!-- Username -->
+            <div class="input-group" role="group">
+                <i class="fas fa-user" aria-hidden="true"></i>
+                <input type="text" name="username" id="logusername" placeholder="Name" required autocomplete="username" aria-label="Name">
+            </div>
+
+            <!-- Password -->
+            <div class="input-group" role="group">
+                <i class="fas fa-lock" aria-hidden="true"></i>
+                <input type="password" id="passwordField" name="password" placeholder="Password" required autocomplete="current-password" aria-label="Password">
+                <i class="fas fa-eye toggle-password" id="togglePassword" tabindex="0" aria-label="Show or hide password" role="button"></i>
+            </div>
+
+            <!-- For error displaying -->
+            <span id="loginError" style="color:red" role="alert" aria-live="assertive"></span>
+            <br>
+
+            <button type="submit" class="login-btn">Log In</button>
+
+        </form>
+
+        <div class="login-toggle" aria-label="Account type">
+            <button type="button" id="userMode" class="active">User</button>
+            <button type="button" id="adminModeBtn">Admin</button>
+        </div>
+
+        <p class="register-link">
+            New here? <a href="#" class="register-link" aria-label="Open registration">Create an account</a>
+        </p>
+
+        <div id="login-flash-messages" aria-live="polite" role="status"></div>
+
+    </div>
+
+</div>

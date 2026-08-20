@@ -1,0 +1,108 @@
+.video-popup{
+    position: fixed;
+    top: 140px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 420px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 12px 35px rgba(0,0,0,0.25);
+    display: none;
+    z-index: 1;
+    font-family: 'Poppins', sans-serif;
+    animation: fadeIn 0.25s ease;
+}
+
+/* Header - same blue gradient as login */
+.video-header{
+    background: linear-gradient(135deg,#3fa9f5,#0078d7);
+    color: white;
+    padding: 14px 18px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    cursor:move;
+    border-radius:10px 10px 0 0;
+    font-weight:600;
+}
+
+/* Content */
+.video-content{
+    padding:18px;
+}
+
+/* Option cards */
+.video-option{
+    display:flex;
+    align-items:center;
+    gap:14px;
+    padding:14px;
+    margin-bottom:10px;
+    border-radius:8px;
+    cursor:pointer;
+    transition:all 0.2s ease;
+    border:1px solid transparent;
+}
+
+/* Icons - blue gradient matching login button */
+.video-option i{
+    font-size:22px;
+    width:40px;
+    height:40px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border-radius:8px;
+    background: linear-gradient(135deg,#3fa9f5,#0078d7);
+    color:white;
+}
+
+/* Text */
+.option-text h4{
+    font-size:15px;
+    margin:0;
+    color:#1f2d3d;
+}
+
+.option-text p{
+    font-size:12px;
+    margin:2px 0 0;
+    color:#6c7a89;
+}
+
+/* Hover effect - subtle blue highlight */
+.video-option:hover{
+    background: #f0f6fb;
+    border:1px solid #cce0ff;
+    transform:translateY(-2px);
+}
+
+/* Close button */
+.close-btn{
+    background:none;
+    border:none;
+    font-size:22px;
+    cursor:pointer;
+    color:white;
+}
+
+.close-btn:hover{
+    opacity:0.8;
+}
+
+/* Animation */
+@keyframes fadeIn{
+    from{
+        opacity:0;
+        transform:translate(-50%,-10px);
+    }
+    to{
+        opacity:1;
+        transform:translate(-50%,0);
+    }
+}
+#signVideo {
+    width: 320px;
+    height: 240px;
+    background-color: black;
+}

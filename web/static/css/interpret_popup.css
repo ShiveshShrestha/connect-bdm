@@ -1,0 +1,156 @@
+/* ================= INTERPRET POPUP ================= */
+
+.interpret-popup{
+    position: fixed;
+    top: 120px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 850px;
+    max-width: 95%;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 12px 35px rgba(0,0,0,0.25);
+    display: none;
+    z-index: 1;
+    font-family: 'Poppins', sans-serif;
+    animation: fadeInInterpret 0.25s ease;
+}
+
+/* ================= HEADER ================= */
+
+.interpret-header{
+    background: linear-gradient(135deg,#3fa9f5,#0078d7);
+    color: white;
+    padding: 14px 18px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    border-radius:10px 10px 0 0;
+    font-weight:600;
+    cursor: move;
+}
+
+/* ================= BODY ================= */
+
+.interpret-body{
+    padding:18px;
+}
+
+/* file input */
+
+#textFileInput{
+    margin-bottom:14px;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* ================= MAIN LAYOUT ================= */
+
+.interpret-main{
+    display:flex;
+    gap:20px;
+}
+
+/* ================= LEFT PANEL ================= */
+
+.interpret-left{
+    width:420px;
+    text-align:center;
+}
+
+/* image */
+
+#interpretImage{
+    width:300px;
+    height:350px;
+    box-sizing:border-box;
+    object-fit:contain;
+    border-radius:2px;
+    border:1px solid #e0e0e0;
+    background:#fafafa;
+}
+
+/* current word */
+
+#currentWord{
+    font-size:22px;
+    font-weight:600;
+    margin-top:8px;
+}
+
+/* ================= CONTROLS ================= */
+
+.controls{
+    display:flex;
+    justify-content:center;
+    gap:8px;
+    margin:12px 0;
+}
+
+.controls button{
+    padding:6px 10px;
+    border:none;
+    border-radius:6px;
+    background: linear-gradient(135deg,#3fa9f5,#0078d7);
+    color:white;
+    cursor:pointer;
+    font-size:13px;
+}
+
+.controls button:hover{
+    opacity:0.9;
+}
+
+/* speed slider */
+
+#speedSlider{
+    width:260px;
+    margin-top:6px;
+}
+
+/* ================= RIGHT PANEL ================= */
+
+.interpret-right{
+    flex:1;
+    display:flex;
+}
+
+/* text display */
+
+#textDisplay{
+    width:300px;
+    height:350px;
+    overflow-y:auto;
+    border:1px solid #e0e0e0;
+    border-radius:2px;
+    padding:12px;
+    font-size:22px;
+    line-height:1.5;
+    background:#fafafa;
+}
+
+/* ================= CLOSE BUTTON ================= */
+
+#closeInterpretPopup{
+    background:none;
+    border:none;
+    font-size:22px;
+    cursor:pointer;
+    color:white;
+}
+
+#closeInterpretPopup:hover{
+    opacity:0.8;
+}
+
+/* ================= ANIMATION ================= */
+
+@keyframes fadeInInterpret{
+    from{
+        opacity:0;
+        transform:translate(-50%,-10px);
+    }
+    to{
+        opacity:1;
+        transform:translate(-50%,0);
+    }
+}

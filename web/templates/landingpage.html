@@ -1,0 +1,117 @@
+{% extends "navbar.html" %} <!-- loads navbar.html -->
+
+<!-- The title block below fills the title section defined in navbar.html. -->
+{% block title %}Connect B-DM | Home{% endblock %}
+
+<!-- Page ko lagi css define gardai -->
+
+{% block content %}
+
+    <!--******************************hero section********************************* -->
+<section class="hero">
+    <div class="hero-content">
+        <h1>Making Everyday Communication Easier</h1>
+        <p>
+            Use a camera, microphone, or text file to move between supported hand signs, readable text, and spoken audio.
+        </p>
+        <button class="primary-btn" type="button" onclick="startRecognition()">Start Recognition</button>
+    </div>
+    <div class="hero-image"></div>
+</section>
+
+    <!--******************************About section********************************* -->
+<section class="product-section">
+    <h2>About Connect B-DM</h2>
+
+    <p class="section-description">
+        Connect B-DM is a browser-based accessibility project built to demonstrate three practical communication tools.
+        It can recognize supported alphabet hand signs through a webcam, turn a short voice recording into text,
+        and display text one character at a time using sign reference images. The project keeps each feature simple
+        so users can clearly see how the input is captured, processed, and presented.
+    </p>
+
+    <div class="features-container">
+        <div class="feature-box">
+            <i class="fas fa-hands" aria-hidden="true"></i>
+            <h3>Sign to Text and Voice</h3>
+            <p>
+                The webcam tracks one hand and sends its landmark points to the trained model.
+                A detected letter can be added to the text box and then played or saved as speech.
+            </p>
+        </div>
+        <div class="feature-box">
+            <i class="fas fa-microphone" aria-hidden="true"></i>
+            <h3>Voice to Text</h3>
+            <p>
+                Record a short message through the microphone. The server prepares the audio,
+                sends it for speech recognition, and shows the returned text on screen.
+            </p>
+        </div>
+        <div class="feature-box">
+            <i class="fas fa-language" aria-hidden="true"></i>
+            <h3>Text Interpreter</h3>
+            <p>
+                Upload a plain text file and step through it at your own pace.
+                Letters are shown with the available sign images, while completed words are displayed between spaces.
+            </p>
+        </div>
+    </div>
+</section>
+
+<div class="section-divider-shape"></div>
+
+    <!--******************************How it works section********************************* -->
+<section class="how-section">
+    <div class="bg-shapes">
+        <span class="shape shape-1"></span>
+        <span class="shape shape-2"></span>
+        <span class="shape shape-3"></span>
+    </div>
+    <div class="container">
+        <h2 class="section-title">How It Works</h2>
+        <p class="section-subtitle">
+            Each tool follows the same straightforward flow: provide an input, let the system process it, and review the result.
+        </p>
+
+        <div class="steps">
+            <div class="step">
+                <div class="step-icon">1</div>
+                <h3>Choose an Input</h3>
+                <p>
+                    Show a supported hand sign to the webcam, record a voice message,
+                    or select a text file from your computer.
+                </p>
+            </div>
+
+            <div class="step">
+                <div class="step-icon">2</div>
+                <h3>Process the Input</h3>
+                <p>
+                    The project uses hand landmarks and a trained model for signs,
+                    audio preprocessing and speech recognition for voice, or stored images for text.
+                </p>
+            </div>
+
+            <div class="step">
+                <div class="step-icon">3</div>
+                <h3>Review the Output</h3>
+                <p>
+                    Read the recognized text, listen to generated speech,
+                    save a message, or move through the sign references one character at a time.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!--******************************Footer section********************************* -->
+<footer>
+    <p>
+        © 2026 Connect B-DM | A student project exploring accessible communication through sign, text, and voice.
+    </p>
+</footer>
+{% endblock %}
+
+<!-- basically landingpage.html vaneko child ho raw navbar.html vaneko parent ho. So html lai restructure garna mildaina
+so child bata navbar.html ma
+block content % endblock % yo cha yeslai matra override garna milxa. -->

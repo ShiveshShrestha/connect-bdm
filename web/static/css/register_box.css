@@ -1,0 +1,132 @@
+/* ================= REGISTER BOX ================= */
+
+.register-box {
+    position: fixed;
+    top: 140px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 420px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 12px 35px rgba(0,0,0,0.25);
+    display: none; /* hidden by default, show via JS */
+    z-index: 1; /* higher than navbar/content */
+    font-family: 'Poppins', sans-serif;
+    animation: fadeIn 0.2s ease;
+}
+
+/* Header */
+.register-header {
+    background: linear-gradient(135deg,#0078d7,#0053a6);
+    color: white;
+    padding: 14px 18px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: move;
+    border-radius: 10px 10px 0 0;
+    font-weight: 600;
+}
+
+/* Close button */
+.close-btn {
+    background: none;
+    border: none;
+    font-size: 22px;
+    cursor: pointer;
+    color: #fff;
+}
+
+/* Content */
+.register-content {
+    padding: 22px;
+}
+
+/* Input groups */
+.input-group {
+    position: relative;
+    margin-bottom: 16px;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 10px 38px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+}
+
+/* Left icons */
+.input-group i:first-child {
+    position: absolute;
+    left: 12px;
+    top: 11px;
+    color: #888;
+}
+
+/* Show/hide password toggle */
+.toggle-password {
+    position: absolute;
+    right: 12px;
+    top: 11px;
+    cursor: pointer;
+    color: #888;
+}
+
+.toggle-password:hover {
+    color: #0078d7;
+}
+
+/* Register button */
+.register-btn {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 6px;
+    background: linear-gradient(135deg,#3fa9f5,#0078d7);
+    color: white;
+    font-weight: 500;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.register-btn:hover {
+    background: linear-gradient(135deg,#2e8de0,#0060b5);
+}
+
+
+/* Flash messages */
+#register-flash-messages {
+    margin-top: 10px;
+    font-size: 13px;
+    color: red;
+}
+
+/* Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translate(-50%, -10px);
+    }
+    to {
+        opacity: 1;
+        transform: translate(-50%, 0);
+    }
+}
+
+/* Error message ko lagi code */
+#registerMessage {
+    display: none; /* hidden by default, shown via JS */
+    width: 100%;
+    margin-top: 10px;
+    padding: 8px 12px;
+    border-radius: 6px; /* pill-like corners for consistency */
+    background-color: #f8d7da; /* soft red background for errors */
+    color: #842029; /* dark red text for readability */
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 1.4;
+    position: relative;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08); /* subtle depth */
+
+}

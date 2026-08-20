@@ -1,0 +1,434 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+/* ================= ROOT VARIABLES ================= */
+:root {
+    --primary: #111827;
+    --primary-accent: #2563eb;
+    --text-dark: #111827;
+    --text-light: #6b7280;
+    --bg-light: #f9fafb;
+    --white: #ffffff;
+    --border: #e5e7eb;
+
+    --radius: 12px;
+    --navbar-height: 80px;
+
+    --shadow-sm: 0 2px 8px rgba(0,0,0,0.04);
+    --shadow-md: 0 8px 25px rgba(0,0,0,0.08);
+
+    --fade-duration: 0.8s;
+}
+
+/* ================= GLOBAL RESET ================= */
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: var(--bg-light);
+    color: var(--text-dark);
+    line-height: 1.7;
+}
+
+.na {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* ================= ANIMATION KEYFRAMES ================= */
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ================= HERO ================= */
+.hero {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: calc(70vh - var(--navbar-height));
+    margin-top: var(--navbar-height);
+    background: var(--white);
+    animation: fadeInUp var(--fade-duration) ease-out forwards;
+}
+
+.hero-content {
+    width: 50%;
+    padding: 0 8%;
+}
+
+.hero-content h1 {
+    font-size: 52px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    line-height: 1.2;
+    animation: fadeInUp var(--fade-duration) ease-out 0.2s forwards;
+    opacity: 0;
+}
+
+
+.hero-content p {
+    margin-bottom: 30px;
+    color: var(--text-light);
+    font-size: 18px;
+    max-width: 500px;
+    animation: fadeInUp var(--fade-duration) ease-out 0.4s forwards;
+    opacity: 0;
+}
+
+/* Button */
+.primary-btn {
+    padding: 14px 36px;
+    background: var(--primary-accent);
+    color: var(--white);
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: var(--shadow-sm);
+    animation: fadeInUp var(--fade-duration) ease-out 0.6s forwards;
+    opacity: 0;
+}
+
+.primary-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+/* Hero Image */
+.hero-image {
+    width: 100%;
+    height: 100%;
+    background: url("a.png") no-repeat right center;
+    background-size: cover;
+    border-radius: 30px; /* adjust for more or less rounding */
+    animation: fadeInUp var(--fade-duration) ease-out 0.8s forwards;
+    opacity: 0;
+}
+
+/* ================= PRODUCT SECTION ================= */
+
+.product-section {
+    position: relative;
+    padding: 100px 0;
+    background: #fdfdff;
+    text-align: center;
+    border-radius: var(--radius);
+     
+    overflow: hidden;
+}
+
+/* Static Blue Circles */
+.product-section::before,
+.product-section::after {
+    content: '';
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(35, 105, 255, 0.71);
+    z-index: 0;
+
+    /* Add floating animation */
+    animation: float 8s ease-in-out infinite;
+}
+
+/* Top-left circle */
+.product-section::before {
+    width: 450px;
+    height: 450px;
+    top: -50px;
+    left: -50px;
+
+}
+
+/* Bottom-right circle */
+.product-section::after {
+    width: 425px;
+    height: 425px;
+    bottom: -100px;
+    right: -100px;
+}
+
+/* Floating animation keyframes */
+@keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-30px); }
+}
+/* Ensure content stays above circles */
+.product-section .container {
+    position: relative;
+    z-index: 1;
+}
+.product-section h2 {
+    font-size: 34px;
+    position: relative;
+    display: inline-block; /* ensures the bar stays aligned */
+    margin-bottom: 20px;
+    font-weight:700;
+}
+
+/* Vertical bar on the right */
+.product-section h2::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: -250px; /* adjust distance from the heading */
+    height: 230px; /* length of the bar */
+    width: 8px;   /* thickness of the bar */
+    background: #0051ffde; /* gradient */
+    border-radius: 2px; /* slight rounding */
+
+}
+
+.section-description {
+    max-width: 700px;
+    margin: 0 auto 60px;
+    color: var(--text-light);
+    font-size: 16px;
+}
+
+.features-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.feature-box {
+    width: 300px;
+    padding: 40px;
+    background: linear-gradient(145deg, #ffffff, #f9fbff);
+    border-radius: 20px;
+    border: none;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    transition: all 0.4s ease;
+    text-align: left;
+}
+
+.feature-box:hover {
+    transform: translateY(-10px) scale(1.05);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.048);
+}
+
+.feature-box i {
+    font-size: 32px;
+    color: var(--primary-accent);
+    margin-bottom: 15px;
+}
+
+.feature-box h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.feature-box p {
+    font-size: 14px;
+    color: var(--text-light);
+}
+
+/* ================= HOW IT WORKS ================= */
+.how-section {
+    padding: 120px 0;
+    background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+     box-shadow: 0 20px 50px rgba(0, 0, 0, 0.048);
+}
+
+.section-title {
+    position: relative;
+    font-size: 38px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: #0f172a;
+}
+
+/* Horizontal line above title */
+.section-title::before {
+    content: "";
+    display: block;
+    width: 350px;
+    height: 8px;
+    background: #0051ffde;
+    margin: 0 auto 20px;
+    border-radius: 2px;
+}
+
+.steps {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+    position: relative;
+}
+
+/* Step Cards */
+.step {
+    background: #ffffff;
+    border-radius: 20px;
+    padding: 30px 25px;
+    width: 260px;
+    top:50px;
+    transition: all 0.3s ease;
+    position: relative;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+/* Hover effect */
+.step:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.048);
+
+}
+
+/* Step Number */
+.step-icon {
+    width: 60px;
+    height: 60px;
+    margin: 0 auto 20px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #6366f1, #4f46e5);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 20px;
+    
+}
+
+/* Titles */
+.step h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #0f172a;
+}
+
+/* Description */
+.step p {
+    font-size: 14px;
+    color: #64748b;
+    line-height: 1.6;
+}
+
+/* ================= BACKGROUND SHAPES ================= */
+.bg-shapes {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    z-index: 0;
+}
+
+/* Base shape style */
+.shape {
+    position: absolute;
+    border-radius: 50%;
+
+    opacity: 0.45;
+}
+
+/* Individual shapes */
+/* .shape-1 {
+    width: 450px;
+    height: 450px;
+    background: #6366f1;
+    top: 270px;
+    left: -80px;
+} */
+
+.shape-2 {
+    width: 300px;
+    height: 300px;
+    background: #22c55e;
+    bottom: -80px;
+    right: -60px;
+}
+
+.shape-3 {
+    width: 350px;
+    height: 350px;
+    background: #0ea5e9;
+    top: 10%;
+    left: 70%;
+}
+
+
+
+/* Ensure content stays above shapes */
+.container {
+    position: relative;
+    z-index: 2;
+}
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+    100% { transform: translateY(0px); }
+}
+
+.shape-1 { animation: float 8s ease-in-out infinite; }
+.shape-2 { animation: float 10s ease-in-out infinite; }
+.shape-3 { animation: float 12s ease-in-out infinite; }
+
+/* ================= FOOTER ================= */
+footer {
+    text-align: center;
+    padding: 30px;
+    background: var(--white);
+    border-top: 1px solid var(--border);
+    font-size: 14px;
+    color: var(--text-light);
+    animation: fadeInUp var(--fade-duration) ease-out 0.2s forwards;
+    opacity: 0;
+}
+/* ================= SECTION DIVIDER SHAPE ================= */
+.section-divider-shape {
+    position: relative;
+    height: 0; /* no space taken */
+}
+
+.section-divider-shape::before {
+    z-index:10;
+    content: "";
+    position: absolute;
+    left: 60px;
+    top: -27px;
+
+    width: 200px;
+    height: 55px;
+    opacity:0.85;
+
+    /* Create multiple vertical lines */
+    background: repeating-linear-gradient(
+        to right,
+        #6366f1 0px,
+        #6366f1 50px,
+        transparent 2px,
+        transparent 30px
+    );
+
+    
+  
+}

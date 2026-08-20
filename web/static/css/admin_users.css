@@ -1,0 +1,126 @@
+/* ===== Admin Users Popup ===== */
+.admin-popup-window {
+    position: fixed;
+    top: 100px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 500px;
+    max-width: 90%;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    display: none;
+    font-family: 'Inter', sans-serif;
+    animation: fadeIn 0.3s ease;
+    overflow: hidden;
+}
+
+/* ===== Header ===== */
+.admin-header {
+    background: linear-gradient(135deg,#0078d7,#0053a6);
+    color: white;
+    padding: 16px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: move;
+    border-radius: 12px 12px 0 0;
+    font-weight: 700; /* bolder for header */
+}
+
+.admin-header h2 {
+    margin: 0;
+    font-size: 16px;
+}
+
+.close-btn {
+    background: none;
+    border: none;
+    font-size: 22px;
+    cursor: pointer;
+    color: #fff;
+    transition: transform 0.2s ease;
+}
+
+.close-btn:hover {
+    transform: scale(1.2);
+}
+
+/* ===== Content ===== */
+.admin-content {
+    padding: 20px;
+    max-height: 450px;
+    overflow-y: auto;
+}
+
+/* ===== Table ===== */
+.user-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+    text-align: left;
+}
+
+.user-table th, .user-table td {
+    padding: 12px 10px;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.user-table th {
+    background: #0078d7;
+    color: #fff;
+    font-weight: 600;
+    position: sticky;
+    top: 0;
+    cursor: pointer;
+    user-select: none;
+}
+
+.user-table tr:hover {
+    background: #f4f7ff;
+    transition: background 0.2s;
+}
+
+/* ===== Delete Button ===== */
+.delete-user {
+    background: #ff4d4f;
+    border: none;
+    color: #fff;
+    padding: 6px 14px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 13px;
+    transition: background 0.2s ease;
+}
+
+.delete-user:hover {
+    background: #d9363e;
+}
+
+/* ===== Scrollbar Styling ===== */
+.admin-content::-webkit-scrollbar {
+    width: 8px;
+}
+
+.admin-content::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 120, 215, 0.5);
+    border-radius: 4px;
+}
+
+.admin-content::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.05);
+}
+
+/* ===== Animation ===== */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translate(-50%, -20px); }
+    to { opacity: 1; transform: translate(-50%, 0); }
+}
+
+/* ===== Sortable Arrow ===== */
+.sortable {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}

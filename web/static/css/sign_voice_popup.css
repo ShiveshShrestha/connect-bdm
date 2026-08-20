@@ -1,0 +1,171 @@
+/* ================= SIGN → VOICE POPUP ================= */
+
+#signVoicePopup {
+    position: fixed;
+    top: 140px; /* slightly above center */
+    left: 820px;
+    transform: translateX(-50%);
+    width: 480px;
+    height: 650px;
+    max-width: 90%;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 14px 40px rgba(0,0,0,0.25);
+    z-index: 1;
+    font-family: 'Poppins', sans-serif;
+    display: none;
+    animation: fadeInPopup 0.3s ease;
+}
+
+/* Header */
+.sign-voice-header {
+    background: linear-gradient(135deg, #3fa9f5, #0078d7);
+    color: white;
+    padding: 14px 18px;
+    font-weight: 600;
+    font-size: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 12px 12px 0 0;
+    cursor: move;
+}
+
+.sign-voice-header .close-btn {
+    background: none;
+    border: none;
+    font-size: 22px;
+    cursor: pointer;
+    color: white;
+}
+
+
+/* Content */
+.sign-voice-content {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    align-items: center;
+}
+
+/* Video */
+#signVideo {
+    width: 100%;
+    max-width: 400px;
+    height: 300px;
+    background-color: #000;
+    border-radius: 8px;
+    object-fit: cover;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+/* Prediction Text Area */
+#predText {
+    width: 100%;
+    height: 80px;
+    resize: none;
+    padding: 10px 12px;
+    font-size: 16px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    font-family: 'Poppins', sans-serif;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+#predText:focus {
+    border-color: #0078d7;
+}
+
+/* Error & Status */
+#signVoiceError, #signVoiceStatus {
+    display: none;
+    width: 100%;
+    margin-top: 8px;
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+#signVoiceError {
+    background-color: #f8d7da;
+    color: #842029;
+}
+
+#signVoiceStatus {
+    background-color: #d1e7dd;
+    color: #0f5132;
+}
+
+/* Animations */
+@keyframes fadeInPopup {
+    from {
+        opacity: 0;
+        transform: translate(-50%, -20px);
+    }
+    to {
+        opacity: 1;
+        transform: translate(-50%, 0);
+    }
+}
+
+/* Dynamically created elements */
+.pred-overlay {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    font-size: 22px;
+    font-weight: bold;
+    color: #fff;
+    background-color: #0078d7;
+    padding: 14px 20px;
+    border-radius: 2px;
+    z-index: 1000;
+    text-align: center;
+    min-width: 60px;
+    
+}
+
+.pred-container {
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+    margin-right: 140px;
+}
+
+.btn-row {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    margin-bottom: 8px;
+}
+
+.pred-btn {
+    padding: 8px 16px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #fff;
+    background-color: #0078d7;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.2s;
+}
+
+.pred-btn:hover {
+    background-color: #005bb5;
+}
+
+.recent-letter {
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 4px;
+}
+
+.hand-status {
+    font-size: 14px;
+    color: #007700;
+}
